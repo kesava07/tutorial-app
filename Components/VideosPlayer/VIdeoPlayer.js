@@ -9,10 +9,9 @@ import {
     Dimensions,
     Platform,
 } from 'react-native'
-import { Actions } from 'react-native-router-flux';
 import YouTube, { YouTubeStandaloneIOS, YouTubeStandaloneAndroid } from 'react-native-youtube';
 
-export class About extends Component {
+export class VIdeoPlayer extends Component {
     state = {
         isReady: false,
         status: null,
@@ -35,23 +34,18 @@ export class About extends Component {
                     if (this.state.containerWidth !== width) this.setState({ containerWidth: width });
                 }}
             >
-
-                {/* <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-                    <Text style={{ color: "black", fontSize: 25, fontWeight: "bold" }} onPress={() => Actions.profile()}> About </Text>
-                </View> */}
-
                 {this.state.containerMounted && (
                     <YouTube
                         ref={component => {
                             this._youTubeRef = component;
                         }}
                         // You must have an API Key for the player to load in Android
-                        apiKey="YOUR_API_KEY"
+                        apiKey="AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I"
                         // Un-comment one of videoId / videoIds / playlist.
                         // You can also edit these props while Hot-Loading in development mode to see how
                         // it affects the loaded native module
-                        videoId="xm5CVCzC1S8"
-                        // videoIds={['xm5CVCzC1S8', 'jcduNDeazLQ', 'MpdX2JOxfds', 'sOHlrupp7NY']}
+                        videoId="ESXcemZxJHs"
+                        // videoIds={['HcXNPI-IPPM', 'XXlZfc1TrD0', 'czcjU1w-c6k', 'uMK0prafzw0']}
                         // playlistId="PLF797E961509B4EB5"
                         play={this.state.isPlaying}
                         loop={this.state.isLooping}
@@ -70,11 +64,9 @@ export class About extends Component {
                     />
                 )}
 
-
             </ScrollView>
-
         )
     }
 }
 
-export default About
+export default VIdeoPlayer

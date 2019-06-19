@@ -12,16 +12,24 @@ export class Home extends Component {
                 <StatusBar backgroundColor="#3367d6" />
                 <View style={[styles.welcomeCard, styles.shadow]}>
                     <Image source={require('../Images/man.png')} style={styles.imageStyles} />
-                    <Text style={{ fontSize: 20 }}>Welcome to Tutorials point</Text>
+                    <Text style={{ fontSize: 20 }}>Welcome to Bindu Tutorials</Text>
                 </View>
-                <View style={styles.cards}>
-                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.maths()}>
-                        <Image source={require('../Images/maths.png')} style={styles.imageStyles} />
-                        <Text style={{ fontSize: 20 }}>Maths</Text>
+                <View style={[styles.cards, { flexWrap: 'wrap' }]}>
+                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.books()}>
+                        <Image source={require('../Images/notebook.png')} style={styles.imageStyles} />
+                        <Text style={{ fontSize: 20 }}>Books</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.physics()} >
-                        <Image source={require('../Images/atom.png')} style={styles.imageStyles} />
-                        <Text style={{ fontSize: 20 }}>Physics</Text>
+                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.exercises()} >
+                        <Image source={require('../Images/test.png')} style={styles.imageStyles} />
+                        <Text style={{ fontSize: 20 }}>Exercises</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.questions()}>
+                        <Image source={require('../Images/question2.png')} style={styles.imageStyles} />
+                        <Text style={{ fontSize: 20 }}>Questions </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={[styles.shadow, styles.cardBody]} onPress={() => Actions.chapters()} >
+                        <Image source={require('../Images/chapters.png')} style={styles.imageStyles} />
+                        <Text style={{ fontSize: 20 }}>Chapters</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -52,7 +60,8 @@ const styles = StyleSheet.create({
     cards: {
         width: WIDTH,
         flexDirection: 'row',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        marginBottom: 20
     },
     shadow: {
         shadowColor: '#000',
@@ -66,7 +75,8 @@ const styles = StyleSheet.create({
         width: 150,
         padding: 15,
         borderRadius: 5,
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 20
     },
     imageStyles: {
         height: 60,

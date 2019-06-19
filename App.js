@@ -4,18 +4,20 @@ import Home from './Screens/Home'
 import About from './Screens/About'
 import Profile from './Screens/Profile'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Maths from './Components/Maths/Maths';
-import physics from './Components/Physics/physics';
+import Books from './Components/Books/Books';
+import Exercises from './Components/Exercises/Exercises';
+import Questions from './Components/Questions/Quesions';
+import Chapters from './Components/Chapters/Chapters'
 
 
 const TabIcon = ({ focused, title }) => {
   let displayIcon = null;
   if (title === "Home") {
-    displayIcon = <Icon name="home" size={25} color={focused ? '#1a73e8' : 'black'} />
-  } else if (title === "About") {
-    displayIcon = <Icon name="info-circle" size={25} color={focused ? '#1a73e8' : 'black'} />
+    displayIcon = <Icon name="home" size={20} color={focused ? '#1a73e8' : 'gray'} />
+  } else if (title === "Videos") {
+    displayIcon = <Icon name="play-circle-o" size={20} color={focused ? '#1a73e8' : 'gray'} />
   } else if (title === "Profile") {
-    displayIcon = <Icon name="user-circle-o" size={25} color={focused ? '#1a73e8' : 'black'} />
+    displayIcon = <Icon name="user-circle-o" size={20} color={focused ? '#1a73e8' : 'gray'} />
   }
   return displayIcon;
 }
@@ -30,18 +32,16 @@ export class App extends Component {
             key="tabbar"
             tabs
             tabBarStyle={{
-              backgroundColor: "#ffffff",
-              shadowColor: '#000',
-              shadowOffset: { width: 0, height: 1 },
-              shadowOpacity: 0.5,
-              shadowRadius: 1,
-              elevation: 5
+              padding:5,
+              borderTopColor:'lightgray'
             }}
-            showLabel={false}
+            // showLabel={false}
+            inactiveTintColor="gray"
           >
 
             <Scene key="home" title="Home" icon={TabIcon}
               titleStyle={{ width: "50%" }}
+            // navigationBarStyle={{ backgroundColor: '#3367d6' }}
             >
               <Scene
                 key="homeScreen"
@@ -50,22 +50,37 @@ export class App extends Component {
                 initial
               />
               <Scene
-                key="maths"
-                component={Maths}
-                title="Maths"
+                key="books"
+                component={Books}
+                title="Books"
               />
               <Scene
-                key="physics"
-                component={physics}
-                title="Physics"
+                key="exercises"
+                component={Exercises}
+                title="Exercises"
               />
+              <Scene
+                key="questions"
+                component={Questions}
+                title="Questions"
+              />
+              <Scene
+                key="chapters"
+                component={Chapters}
+                title="Chapters"
+              />
+              {/* <Scene
+                key="videoPlyer"
+                component={VIdeoPlayer}
+                title="Video"
+              /> */}
             </Scene>
 
-            <Scene key="about" title="About" icon={TabIcon} titleStyle={{ width: "50%" }}>
+            <Scene key="videoTab" title="Videos" icon={TabIcon} titleStyle={{ width: "50%" }}>
               <Scene
-                key="aboutScreen"
+                key="VideosScreen"
                 component={About}
-                title="About"
+                title="Videos"
               />
             </Scene>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, Dimensions, StyleSheet, View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -8,9 +9,8 @@ const TopicsList = (props) => {
     return (
         <View style={{ width: "100%", justifyContent: "center", alignItems: 'center' }}>
             <TouchableOpacity style={[styles.cards, { justifyContent: 'space-evenly' }]}>
-                <Icon name="arrow-right" color="#3367d6" style={{ width: 100, position: 'relative', left: 40, top: 5 }} />
+                <Icon name="th-list" size={20} color="#3367d6" style={{ width: 100, position: 'relative', left: 35, top: 5 }} />
                 <Text style={{ fontSize: 20, fontWeight: "400", width: 310 }}>{props.topics}</Text>
-
             </TouchableOpacity>
         </View>
     )
